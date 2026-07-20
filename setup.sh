@@ -6,7 +6,7 @@ if command -v nix >/dev/null 2>&1; then
   echo "nix already installed"
 else
   # Install Nix
-  sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+  sh <(curl -sSf -L https://install.lix.systems/lix | sh -s -- install)
   zsh
 fi
 
