@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 let
   # Custom deep merge logic
@@ -49,6 +49,8 @@ in {
     # # "Hello, world!" when run.
     # pkgs.hello
     pkgs.direnv
+    pkgs-unstable.mactop # stable is currently broke :/
+    pkgs.container
     pkgs.nerd-fonts.jetbrains-mono
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
