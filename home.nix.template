@@ -30,8 +30,8 @@ let
 in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "sawyer";
-  home.homeDirectory = "/Users/sawyer";
+  home.username = "__USER__";
+  home.homeDirectory = "/Users/__USER__";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -129,22 +129,13 @@ in {
     git = {
       enable = true;
 
-      settings = {
-        init.defaultBranch = "main";
-        user.name = "Sawyer Hopkins";
-        user.email = "sawyer@sawyerhopkins.com";
-        core.sshCommand = "ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes";
-        alias = {
-          s = "status";
-          co = "checkout";
-        };
-      };
+      settings = importAndMerge ./git_settings {};
 
       includes = importAndMerge ./git_includes [];
 
       signing = {
         format = "ssh";
-        key = "~/.ssh/id_rsa";
+        key = "~/.ssh/id_ed25519";
         signByDefault = true;
       };
     };
