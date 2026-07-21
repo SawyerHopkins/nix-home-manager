@@ -50,7 +50,7 @@ in {
     # pkgs.hello
     pkgs.direnv
     pkgs-unstable.mactop # stable is currently broke :/
-    pkgs-unstable.container
+    pkgs.container
     pkgs.nerd-fonts.jetbrains-mono
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
